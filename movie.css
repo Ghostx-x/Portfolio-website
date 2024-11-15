@@ -1,0 +1,476 @@
+@import url('https://api.fontshare.com/css?f[]=satoshi@400,500,700&display=swap');
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #1B1B23;
+}
+
+
+/* Header */
+header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.rectangle2 {
+    background-color: #3e3e47;
+    height: 61px;
+    width: 391px;
+    border-radius: 50px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rectangle2 ul {
+    list-style: none;
+    display: flex;
+    gap: 65px;  
+    background: transparent;
+    background-color: transparent;  
+}
+
+.rectangle2 li {
+    background: transparent;
+    background-color: transparent; 
+}
+
+
+.rectangle2 a {
+    position: relative; 
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Satoshi', sans-serif;
+    background: transparent;
+    background-color: transparent;  
+}
+
+.rectangle2 a::after {
+    content: "";
+    display: block;
+    width: 0; 
+    height: 2px; 
+    background: #e3e3e3; 
+    transition: width 0.3s ease; 
+    position: absolute;
+    bottom: -5px; 
+    left: 0; 
+}
+
+.rectangle2 a:hover::after {
+    width: 100%; 
+}
+
+
+
+
+
+
+
+
+/* Main Projects Section */
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 100px 0 20px 0;
+}
+
+
+
+.intro h1 {
+    display: flex;
+    justify-content: left;
+    font-size: 65px;
+    font-family: 'Satoshi', sans-serif;
+    color: #e3e3e3;
+    font-weight: 700;
+    margin-top: 20px; /* Ensure this doesn’t push other elements */
+    margin-left: 10%;
+    margin-top: -10px;
+}
+
+
+.intro {
+    position: relative; /* Allows z-index control */
+    background-image: url('Vector 1.png'); 
+    background-size: 70%; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    padding: 50px 0;
+    z-index: 1;
+}
+
+.movie_pic {
+    display: flex;
+    justify-content: center;
+    margin-top: 28%;
+    margin-left: 10%;
+    background: transparent;
+    background-color: transparent;  
+    width: 80%;
+    position: relative; /* Enables z-index control */
+    z-index: 2; /* Ensure it appears above the .intro background */
+}
+
+.movie_pic img {
+    width: 80%;
+    max-width: 800px;
+    height: auto;
+    background: transparent;
+    background-color: transparent;  
+}
+
+.intro img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: relative; 
+    z-index: -1; 
+    transform: translateY(-20%);
+}
+
+
+.intro img {
+    width: 100%;
+    height: auto;
+    margin-top: -20%; 
+    margin-left: 0;
+    max-width: 108%;
+    z-index: -1;
+}
+
+/* Main */
+
+/* Intro Section Text Styling */
+.intro p {
+    font-size: 24px;
+    font-family: 'Satoshi', sans-serif;
+    color: #e3e3e3;
+    padding: 0 20px; /* Adds 20px padding on the left and right */
+    max-width: 1000px; /* Increases maximum width */
+    margin: 20px auto; /* Centers the text within the section */
+    text-align: center;
+    margin-top: -70%;
+    background: transparent;
+    background-color: transparent; 
+}
+
+/* Motivation, Description, and Result Sections */
+.motivation, .desc, .result {
+    width: 90%; /* Increases width to make sections wider */
+    max-width: 1000px; /* Increases max width for larger screens */
+    margin: 0 auto; /* Centers the section */
+    padding: 20px 0; /* Adds vertical padding */
+    z-index: 2;
+    background: transparent;
+    background-color: transparent; 
+}
+
+.motivation h1, .desc h1, .result h1{
+    font-size: 36px;
+    font-family: 'Satoshi', sans-serif;
+    color: #e3e3e3;
+    font-weight: 700;
+    margin: 0 0 20px; /* Adds spacing below each h1 */
+    text-align: left;
+    max-width: 1000px; /* Matches the wider layout */
+    margin-right: auto;
+    background: transparent;
+    background-color: transparent; 
+}
+
+.desc p {
+    margin-top: -60px;
+}
+
+.motivation p, .desc p, .result p {
+    font-size: 24px;
+    font-family: 'Satoshi', sans-serif;
+    color: #e3e3e3;
+    line-height: 1.6;
+    padding: 0 20px; /* Adds 20px padding on the left and right */
+    margin-bottom: 40px; /* Adds spacing below paragraphs */
+    background: transparent;
+    background-color: transparent; 
+}
+
+/* Layout for Description Section */
+.desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: -30%;
+    background: transparent;
+    background-color: transparent;
+}
+
+/* Container for Data, Description, and Method sections */
+.desc-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto; /* Centers the container */
+    padding: 50px 0;
+}
+
+/* Centered Data Section on top */
+.data {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+    margin: 30px;
+}
+
+/* Positioning Desc Text on the Bottom Left */
+.desc-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 45%;
+    padding: 0 20px;
+    margin-bottom: -80%;
+}
+
+/* Positioning Method on the Bottom Right */
+.method {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45%;
+    padding: 0 20px;
+    margin-bottom: -68%;
+}
+
+.desc-text .method {
+    margin-top: 20%;
+}
+
+/* Adjust the spacing as needed */
+
+
+
+.movie-elips2 {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: relative; 
+    z-index: -1; 
+    margin-top: -30%; 
+    margin-left: -30%;
+    max-width: 108%;
+    background: transparent;
+    background-color: transparent; 
+}
+
+.data {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+/* Optional styling for the GitHub Repo link in the Result section */
+
+.result {
+    margin-top: 800px;
+}
+.result h5 {
+    font-size: 24px;
+    color: #e3e3e3;
+    font-family: 'Satoshi', sans-serif;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.result h5 a {
+    color: #e3e3e3;
+    text-decoration: none;
+    border-bottom: 1px solid #e3e3e3; /* Underline effect for the link */
+    padding-bottom: 2px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.result h5 a:hover {
+    color: #ffffff;
+    border-color: #ffffff; /* Changes color on hover */
+}
+
+.result img {
+    margin: 20px;
+}
+
+
+
+
+
+
+/* Footer */
+/* Footer Adjustments */
+footer {
+    position: relative;
+    color: white;
+    padding: 250px 100px 50px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #1B1B23;
+    background: transparent;
+    background-color: transparent;
+    z-index: 1;
+}
+
+/* Left Align Contact Section */
+.contact {
+    text-align: left;
+    margin-right: auto; /* Pushes the contact section to the far left */
+    position: relative;
+    background: transparent;
+    background-color: transparent;
+}
+
+/* Adjust Ellipse for Full Visibility */
+.contact img {
+    position: absolute;
+    top: -200px; /* Adjust as needed */
+    left: -100px; /* Adjust to ensure full visibility */
+    z-index: -1;
+}
+
+
+/* Line at the top */
+.line img {
+    position: absolute;
+    top: 90px; /* Adjust to position it just above the footer */
+    left: 0;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: -10%;
+}
+
+
+/* "Get in Touch" and email styles */
+.text {
+    font-size: 30px;
+    font-family: 'Satoshi', sans-serif;
+    color: #e3e3e3;
+    font-weight: 500;
+    background: transparent;
+    background-color: transparent;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.mail {
+    font-size: 24px;
+    font-family: 'Satoshi', sans-serif;
+    color: #e3e3e3;
+    font-weight: 200;
+    margin-top: 100px; /* Adjust this value to add more space */
+    margin-left: 10px;
+    background: transparent;
+}
+
+/* Underline animation for email and "Read More" */
+.mail, .project a {
+    position: relative;
+    color: #e3e3e3;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: 'Satoshi', sans-serif;
+    padding-left: 10px;
+}
+
+.mail::after, .project a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #e3e3e3;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -2px;
+}
+
+.mail::after{
+    left: 0;
+}
+
+.mail:hover::after{
+    width: 100%;
+}
+.project a:hover::after{
+    width: 25%;
+}
+
+
+
+/* Social links styling */
+
+
+.socials a img {
+    position: relative;
+    margin-bottom: -10%;
+    margin-top: -10%;
+    margin-left: -5%;
+}
+
+@keyframes underlineAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+.socials {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px; /* Add some space between each link */
+    background: transparent;
+    background-color: transparent;
+}
+
+.socials a {
+    position: relative;
+    color: #e3e3e3;
+    font-size: 28px;
+    font-family: 'Satoshi', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    background: transparent;
+    background-color: transparent;
+}
+
+.socials a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #e3e3e3;
+    transition: width 0.3s ease;
+    position: relative;
+    top: 3px;
+}
+
+.socials a:hover::after {
+    width: 80%;
+}
+
+
+

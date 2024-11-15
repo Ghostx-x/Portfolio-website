@@ -1,0 +1,474 @@
+@import url('https://api.fontshare.com/css?f[]=satoshi@400,500,700&display=swap');
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #1B1B23;
+}
+
+
+/* Header */
+header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.rectangle2 {
+    background-color: #3e3e47;
+    height: 61px;
+    width: 391px;
+    border-radius: 50px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rectangle2 ul {
+    list-style: none;
+    display: flex;
+    gap: 65px;  
+    background: transparent;
+    background-color: transparent;  
+}
+
+.rectangle2 li {
+    background: transparent;
+    background-color: transparent; 
+}
+
+
+.rectangle2 a {
+    position: relative; 
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Satoshi', sans-serif;
+    background: transparent;
+    background-color: transparent;  
+}
+
+.rectangle2 a::after {
+    content: "";
+    display: block;
+    width: 0; 
+    height: 2px; 
+    background: #e3e3e3; 
+    transition: width 0.3s ease; 
+    position: absolute;
+    bottom: -5px; 
+    left: 0; 
+}
+
+.rectangle2 a:hover::after {
+    width: 100%; 
+}
+
+
+
+
+
+
+
+
+/* Main Projects Section */
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 100px 0 20px 0;
+}
+
+
+
+.intro h1 {
+    display: flex;
+    justify-content: left;
+    font-size: 70px;
+    font-family: 'Satoshi', sans-serif;
+    color: #e3e3e3;
+    font-weight: 700;
+    margin-top: 20px; /* Ensure this doesn’t push other elements */
+    margin-left: 10%;
+}
+
+
+.intro {
+    position: relative; /* Allows z-index control */
+    background-image: url('Vector 1.png'); 
+    background-size: 70%; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    padding: 50px 0;
+    z-index: 1;
+}
+
+.movie_pic {
+    display: flex;
+    justify-content: center;
+    margin-top: 28%;
+    margin-left: 10%;
+    background: transparent;
+    background-color: transparent;  
+    width: 80%;
+    position: relative; /* Enables z-index control */
+    z-index: 2; /* Ensure it appears above the .intro background */
+}
+
+.movie_pic img {
+    width: 80%;
+    max-width: 800px;
+    height: auto;
+    background: transparent;
+    background-color: transparent;  
+}
+
+.intro img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: relative; 
+    z-index: -1; 
+    transform: translateY(-20%);
+}
+
+
+
+.intro img {
+    width: 100%;
+    height: auto;
+    margin-top: -20%; 
+    margin-left: 0;
+    max-width: 108%;
+    z-index: -1;
+}
+
+/* Main */
+
+/* Intro Section Text Styling */
+.intro p {
+    font-size: 24px;
+    font-family: 'Satoshi', sans-serif;
+    color: #e3e3e3;
+    padding: 0 20px; /* Adds 20px padding on the left and right */
+    max-width: 1000px; /* Increases maximum width */
+    margin: 20px auto; /* Centers the text within the section */
+    text-align: center;
+    margin-top: -70%;
+    background: transparent;
+    background-color: transparent; 
+}
+
+
+
+/* Positioning the .desc Section */
+.desc {
+    width: 70%; /* Adjust width if needed */
+    margin: 50px auto; /* Center-align and add space between sections */
+    margin-top: -70%;
+    color: #e3e3e3;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 20px;
+    z-index: 2;
+    background: transparent;
+    background-color: transparent; 
+}
+
+.desc h3, .progress h3, .result h3 {
+    font-size: 36px;
+    font-family: 'Satoshi', sans-serif;
+    color: #e3e3e3;
+    font-weight: 700;
+    margin: 0 0 20px; /* Adds spacing below each h1 */
+    margin-left: -20px;
+    text-align: left;
+    max-width: 1000px; /* Matches the wider layout */
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent;
+    background-color: transparent; 
+}
+
+.progress h3, .desc h3, .result h3 {
+    margin-left: -10px;
+}
+.desc p, .progress p, .result p{
+    font-size: 20px;
+    font-family: 'Satoshi', sans-serif;
+    color: #e3e3e3;
+    line-height: 1.6;
+    padding: 0 20px; /* Adds 20px padding on the left and right */
+    margin-bottom: 20px; /* Adds spacing below paragraphs */
+    background: transparent;
+    background-color: transparent; 
+}
+
+.schedule-container {
+    display: flex;
+    align-items: flex-start; /* Aligns items at the top */
+    gap: 20px; /* Space between text and image */
+    margin-top: 20px;
+    background: transparent;
+    background-color: transparent; 
+}
+
+.schedule-text {
+    color: #e3e3e3;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 20px;
+    margin-top: 90px;
+    margin-left: 70px;
+}
+
+.schedule-text ul {
+    list-style-type: none; /* Optional: Remove bullet points */
+    padding-left: 0;
+}
+
+.schedule-container img {
+    max-width: 450px; /* Adjust image size as needed */
+    height: auto;
+    margin-left: 20%;
+    margin-top: 50px;
+    background: transparent;
+    background-color: transparent; 
+}
+
+.progress {
+    margin-top: -22%;
+    z-index: 2;
+    width: 70%;
+}
+
+.result {
+    width: 70%;
+}
+
+
+
+/* Code Block Styling */
+pre {
+    background-color: #2b2b36; /* Dark background to match the theme */
+    color: #e3e3e3; /* Light text color for contrast */
+    padding: 15px; /* Add padding around the code */
+    border-radius: 10px;
+    margin: 50px 80px; /* Space between code and surrounding text */
+    font-family: 'Source Code Pro', monospace;
+    overflow-x: auto; /* Enable horizontal scrolling for long code lines */
+}
+
+/* Highlight.js Custom Styles */
+.hljs {
+    background-color: #2b2b36; /* Match code background color */
+    color: #f8f8f2; /* Light text */
+    background: transparent;
+    background-color: transparent; 
+}
+
+.hljs-keyword,
+.hljs-attribute {
+    color: #c678dd; /* Purple color for keywords */
+    font-weight: bold;
+    background: transparent;
+    background-color: transparent; 
+}
+
+.hljs-string,
+.hljs-comment {
+    color: #98c379; /* Green color for strings and comments */
+    background: transparent;
+    background-color: transparent; 
+}
+
+.hljs-function,
+.hljs-title {
+    color: #61afef; /* Blue color for functions and titles */
+    background: transparent;
+    background-color: transparent; 
+}
+
+.hljs-literal,
+.hljs-number {
+    color: #d19a66; /* Orange color for numbers */
+    background: transparent;
+    background-color: transparent; 
+}
+
+.hljs-built_in {
+    color: #56b6c2; /* Cyan color for built-in elements */
+    background: transparent;
+    background-color: transparent; 
+}
+
+.hljs-meta {
+    color: #e06c75; /* Red color for meta info */
+    background: transparent;
+    background-color: transparent; 
+}
+
+.hljs-subst, .hljs-params{
+    background: transparent;
+    background-color: transparent; 
+}
+
+
+
+/* Footer */
+/* Footer Adjustments */
+footer {
+    position: relative;
+    color: white;
+    padding: 250px 100px 50px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #1B1B23;
+    background: transparent;
+    background-color: transparent;
+    z-index: 1;
+}
+
+/* Left Align Contact Section */
+.contact {
+    text-align: left;
+    margin-right: auto; /* Pushes the contact section to the far left */
+    position: relative;
+    background: transparent;
+    background-color: transparent;
+}
+
+/* Adjust Ellipse for Full Visibility */
+.contact img {
+    position: absolute;
+    top: -200px; /* Adjust as needed */
+    left: -100px; /* Adjust to ensure full visibility */
+    z-index: -1;
+}
+
+
+/* Line at the top */
+.line img {
+    position: absolute;
+    top: 90px; /* Adjust to position it just above the footer */
+    left: 0;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: -10%;
+}
+
+
+/* "Get in Touch" and email styles */
+.text {
+    font-size: 30px;
+    font-family: 'Satoshi', sans-serif;
+    color: #e3e3e3;
+    font-weight: 500;
+    background: transparent;
+    background-color: transparent;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.mail {
+    font-size: 24px;
+    font-family: 'Satoshi', sans-serif;
+    color: #e3e3e3;
+    font-weight: 200;
+    margin-top: 100px; /* Adjust this value to add more space */
+    margin-left: 10px;
+    background: transparent;
+}
+
+/* Underline animation for email and "Read More" */
+.mail, .project a {
+    position: relative;
+    color: #e3e3e3;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 24px;
+    font-family: 'Satoshi', sans-serif;
+    padding-left: 10px;
+}
+
+.mail::after, .project a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #e3e3e3;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -2px;
+}
+
+.mail::after{
+    left: 0;
+}
+
+.mail:hover::after{
+    width: 100%;
+}
+.project a:hover::after{
+    width: 25%;
+}
+
+
+
+/* Social links styling */
+
+
+.socials a img {
+    position: relative;
+    margin-bottom: -10%;
+    margin-top: -10%;
+    margin-left: -5%;
+}
+
+@keyframes underlineAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+.socials {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px; /* Add some space between each link */
+    background: transparent;
+    background-color: transparent;
+}
+
+.socials a {
+    position: relative;
+    color: #e3e3e3;
+    font-size: 28px;
+    font-family: 'Satoshi', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    background: transparent;
+    background-color: transparent;
+}
+
+.socials a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #e3e3e3;
+    transition: width 0.3s ease;
+    position: relative;
+    top: 3px;
+}
+
+.socials a:hover::after {
+    width: 80%;
+}
+
+

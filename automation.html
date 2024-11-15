@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natali Gevorgyan Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-light.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="automation.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="rectangle2">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <!-- Main -->
+    <main>
+        <section class="intro">
+            <h1>Coding in my everyday life</h1>
+            <div class="movie_pic">
+                <img src="img/Automation_page.png" alt="Automation Picture">
+            </div>
+            
+            
+            <img src="img/vector_movie.png" alt="vector">
+        </section>
+
+        <section class="desc">
+            <h3>Instagram Automation</h3>
+            <p>I started a small detox drink business when I was 16. To be honest, I wasn't thrilled with the number of followers I had on Instagram, and that meant I didn't get many customers. After getting some tips from experienced social media managers, I learned I could improve my account's visibility just by commenting on posts related to my business. But that was really tiring, so I decided I needed to automate the whole process. That's why I created this script to help boost my visibility. First I analyzed the active hours of Instagram.</p>
+        
+            <div class="schedule-container">
+                <div class="schedule-text">
+                    <p>I chose this schedule:</p>
+                    <ul>
+                        <li>Monday: 11 a.m. to 2 p.m.</li>
+                        <li>Tuesday: 10 a.m. to 4 p.m.</li>
+                        <li>Wednesday: 9 a.m. to 4 p.m.</li>
+                        <li>Thursday: 9 a.m. to 1 p.m.</li> 
+                        <li>Friday: 11 a.m. to 12 a.m.</li>
+                        <li>Saturday: 9 a.m. to 12 p.m.</li> 
+                        <li>Sunday: 10 a.m. to 12 p.m.</li>
+                    </ul>
+                </div>
+                <img src="img/auto_pic.png" alt="Automation Image">
+            </div>
+        </section>
+        
+
+        <section class="progress">
+
+            <h3>The progress of building</h3>
+
+            <p>To build the automation, I chose Instabot, a Python library for automating Instagram actions. Instabot is simple to use, supports actions like commenting, following, and liking, and handles authentication via login with your Instagram credentials. (I'll hide my Instagram credentials for my accounts privacy)</p>
+
+            <pre>
+                <code id="sourcecode" class="language-python">
+            from instabot import Bot
+            import random
+            import time
+            import schedule
+            from datetime import datetime
+                </code>
+            </pre>
+
+            <p>The script was designed to: <br>-> Log into Instagram with my account credentials. <br>-> Use a list of hashtags relevant to my business (e.g., "detox," "fitness"). <br>-> Randomly select posts within these hashtags and leave comments from a pre-defined list of positive phrases and like the post. <br>-> Implement a random time delay between comments to avoid triggering Instagram's anti-bot mechanisms. <br>-> Allow scheduling for specific times and days of the week, ensuring the bot runs at the right times.</p>
+            
+            <pre>
+                <code id="sourcecode" class="language-python">
+                    username = "-"
+                    password = "-"
+                    
+                    hashtags = ["detox", "fitness", "fruits", "diet", "healthy"]
+                    comments = ["Awesome!", "Amazing!", "Great!", "Love it!", "This looks fantastic!"]
+                </code>
+            </pre>
+
+            <p>One important part of the process was ensuring that the bot's actions appeared natural. To do this, I implemented a random delay between comments and a random number of comments each day (ranging from 3 to 15). This helped to ensure the bot wouldn't appear too robotic and avoided triggering Instagram's spam filters.</p>
+          
+            <pre>
+                <code id="sourcecode" class="language-python">
+                    def comment_and_like():
+                    bot = Bot()
+                    bot.login(username=username, password=password)
+                    daily_comment_limit = random.randint(3, 15)
+                    comments_made = 0
+                
+                    for hashtag in hashtags:
+                        posts = bot.get_hashtag_medias(hashtag)
+                        for post in posts:
+                            if comments_made >= daily_comment_limit:
+                                break
+                
+                            try:
+                                # Commenting
+                                comment = random.choice(comments)
+                                bot.comment(post, comment)
+                                comments_made += 1
+                                print(f"Commented '{comment}' on post with hashtag #{hashtag} at {datetime.now()}")
+                
+                                # Liking
+                                bot.like(post)
+                                print(f"Liked post with hashtag #{hashtag} at {datetime.now()}")
+                
+                                # Pretending to be human
+                                time.sleep(random.randint(90, 270))
+
+                            except Exception as e:
+                                print(f"Error commenting on post: {e}")
+                                continue
+                
+                    print(f"Total comments and likes made today: {comments_made}")
+                    bot.logout()
+                </code>
+            </pre>
+
+            <p>I used the schedule library to specify the exact times for the bot to run (for example Monday at 7 a.m. and Friday at 4 p.m.). </p>
+
+            <pre>
+                <code id="sourcecode" class="language-python">
+                    def random_schedule(start_hour, end_hour):
+                    minute = random.randint(0, 59)
+                    hour = random.randint(start_hour, end_hour)
+                
+                    if hour == start_hour:
+                        minute = random.randint(0, 59)
+                    elif hour == end_hour:
+                        minute = random.randint(0, 59)
+                
+                    return f"{hour:02d}:{minute:02d}"
+                </code>
+            </pre>
+
+            <pre>
+                <code id="sourcecode" class="language-python">
+                    schedule.every().monday.at(random_schedule(11, 14)).do(comment_and_like)
+                    schedule.every().tuesday.at(random_schedule(10, 16)).do(comment_and_like)
+                    schedule.every().wednesday.at(random_schedule(9, 16)).do(comment_and_like)
+                    schedule.every().thursday.at(random_schedule(9, 13)).do(comment_and_like)
+                    schedule.every().friday.at(random_schedule(11, 12)).do(comment_and_like)
+                    schedule.every().saturday.at(random_schedule(9, 12)).do(comment_and_like)
+                    schedule.every().sunday.at(random_schedule(10, 12)).do(comment_and_like)
+                    
+                    print("Bot is running with scheduled times:")
+                    while True:
+                        schedule.run_pending()
+                        time.sleep(60)
+                </code>
+            </pre>
+            
+        </section>
+
+
+        <section class="result">
+            <h3>Result</h3>
+            <p>With this script, I've actually been able to reach my goals! First off, regular comments on other posts have seriously boosted my account's visibility, and I'm getting way more interaction from people who actually care about my content. Plus, I've seen my follower count go up, since more people are discovering my business through these interactions. And the best part? The automation keeps everything consistent, so I don't have to spend forever commenting on tons of posts every day. It's made everything so much easier and way more effective!</p>
+        
+        </section>
+        
+
+        
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="line">
+            <img src="img/Line 1.png" alt="line image">
+        </div>
+        <div class="contact">
+            <img src="img/Ellipse 5.png" alt="ellipse background">
+            <p class="text">Get In Touch</p>
+            <a href="mailto:nataligevorgyan2007@gmail.com" class="mail">nataligevorgyan2007@gmail.com</a>
+        </div>
+        <div class="socials">
+            <a href="https://www.linkedin.com/in/natali-gevorgyan-747ba0281/" target="_blank">LinkedIn <img src="img/arrow_back.png" alt="arrow icon"></a>
+            <a href="https://github.com/Ghostx-x" target="_blank">GitHub <img src="img/arrow_back.png" alt="arrow icon"></a>
+            <a href="https://www.behance.net/Nataligevorgyan1" target="_blank">Behance <img src="img/arrow_back.png" alt="arrow icon"></a>
+        </div>
+    </footer> 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
