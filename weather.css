@@ -84,46 +84,38 @@ main {
     color: #e3e3e3;
     font-weight: 700;
     margin-top: 0;
-    margin-left: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 1000px;
+    padding-left: 20px;
 }
 
 .weather_pic {
     display: flex;
     justify-content: center;
-    margin-top: 30%;
-    margin-left: 10%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
     background: transparent;
-    background-color: transparent;  
-    width: 80%;
+    background-color: transparent;
+    width: 90%;
+    max-width: 1000px;
+    padding: 0 20px;
     position: relative;
     z-index: 2;
 }
 
 .weather_pic img {
-    width: 80%;
-    max-width: 800px;
+    width: 100%;
+    max-width: 100%;
     height: auto;
     background: transparent;
     background-color: transparent;  
 }
 
-.intro img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    position: relative; 
-    z-index: -1; 
-    transform: translateY(-20%);
-}
-
-.intro img {
-    width: 100%;
-    height: auto;
-    margin-top: -20%; 
-    margin-left: 0;
-    max-width: 108%;
-    z-index: -1;
+.intro > img {
+    display: none;
 }
 
 .intro {
@@ -141,9 +133,7 @@ main {
 .desc {
     width: 90%; 
     max-width: 1000px; 
-    margin: 0 auto; 
-    margin-top: -20%;
-    margin-bottom: 20%;
+    margin: 40px auto;
     padding: 20px 0; 
     z-index: 2;
     background: transparent; 
